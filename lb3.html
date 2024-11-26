@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Обработка изображений</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 20px;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            background-color: rgb(235, 167, 167);
+        }
+        .canvas-container {
+            display: flex;
+            justify-content: space-between;
+            width: 100%;
+            max-width: 800px;
+            margin-bottom: 20px;
+        }
+        canvas {
+            border: 1px solid #ccc;
+            width: 45%;
+        }
+        .controls {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            width: 100%;
+            max-width: 800px;
+        }
+        .controls button, .controls input {
+            margin: 5px 0;
+            padding: 10px;
+            font-size: 16px;
+            width: 100%;
+        }
+        h1 {
+            font-family: Black Chancery;
+            color: aliceblue;
+            margin-bottom: 20px;
+        }
+        .slider-container {
+            display: flex;
+            flex-direction: column;
+            width: 100%;
+        }
+        .slider-container label {
+            margin-bottom: 5px;
+        }
+        .slider-container input[type="range"] {
+            width: 100%;
+        }
+    </style>
+</head>
+<body>
+    <h1>Обработка изображений</h1>
+    <div class="canvas-container">
+        <canvas id="original-image"></canvas>
+        <canvas id="processed-image"></canvas>
+    </div>
+    <div class="controls">
+        <input type="file" id="image-upload">
+        <div class="slider-container">
+            <label for="brightness-slider">Яркость:</label>
+            <input type="range" id="brightness-slider" min="-100" max="100" value="0">
+        </div>
+        <div class="slider-container">
+            <label for="contrast-slider">Контрастность:</label>
+            <input type="range" id="contrast-slider" min="-100" max="100" value="0">
+        </div>
+        <button id="apply-linear-contrast">Линейное контрастирование</button>
+    </div>
+
+    <script src="lbJs/lb3.js"></script>
+</body>
+</html>
